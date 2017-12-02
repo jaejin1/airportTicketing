@@ -21,13 +21,13 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <!--위의 상단바-->
 <?php
-  include GROUND_ROOT."/sideBar.php";
+  include GROUND_DIR."/sideBar.php";
 ?>
 
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
   <?php
-    include GROUND_ROOT . "/header.php";
+    include GROUND_DIR . "/header.php";
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
@@ -49,7 +49,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
     <ul class="login-util" style="visibility:visible">
       <li><span class="login-util-type"><a href= "<?echo MEMBER_ROOT?>/findMemberIdForm.php">아이디 찾기</a></span></li>
-      <li><span class="login-util-type"><a href="<?echo MEMBER_ROOT?>/insertmember.php" title="회원 가입하기 새창열기">회원가입 하기</a></span></li>
+      <li><span class="login-util-type"><a href="<?echo MAIN_ROOT."/member"?>/insertmember.php" title="회원 가입하기 새창열기">회원가입 하기</a></span></li>
       <li><span class="login-util-type"><a href="#">비밀번호 찾기</a></span></li>
     </ul>
   </div>
@@ -64,11 +64,11 @@ Licence URI: http://www.os-templates.com/template-terms
 
 <!--footer 부분-->
 <?php
-  include GROUND_ROOT . "/footer.php";
+  include GROUND_DIR . "/footer.php";
 ?>
 <!-- JAVASCRIPTS -->
 <?php
-  include GROUND_ROOT . "/javascriptpart.php";
+  include GROUND_DIR . "/javascriptpart.php";
 ?>
 
 </body>
