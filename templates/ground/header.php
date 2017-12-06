@@ -9,11 +9,11 @@
     <!--Header-->
     <header id="header" class="hoc clear">
       <div id="logo" class="fl_left">
-        <h1><a href="<?echo MAIN_DIR?>/">EARTHPORT</a></h1>
+        <h1><a href="<?echo MAIN_ROOT?>/">EARTHPORT</a></h1>
       </div>
       <nav id="mainav" class="fl_right">
         <ul class="clear">
-          <li class="active"><a href="<?echo MAIN_DIR?>/">Home</a></li>
+          <li class="active"><a href="<?echo MAIN_ROOT?>/">Home</a></li>
           <li><a class="drop" href="<?php echo TICKET_ROOT."/ticketbookingMain.php"?>">항공권 예매</a>
             <ul>
               <li><a class="drop" href="<?echo TICKET_ROOT."/ticketbooking.php"?>">항공권 예매</a>

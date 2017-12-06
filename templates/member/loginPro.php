@@ -1,6 +1,7 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
   include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+  session_start();
  ?>
 
 <!DOCTYPE html>
@@ -50,8 +51,6 @@ Licence URI: http://www.os-templates.com/template-terms
 
 	try{
 
-	}
-
     if( !isset($members[$id]) || $members[$id]['password'] != $passwd ) {
         header("Content-Type: text/html; charset=UTF-8");
         echo "<script>alert('아이디 또는 비밀번호가 잘못되었습니다.');";
@@ -59,9 +58,11 @@ Licence URI: http://www.os-templates.com/template-terms
         exit;
     }
     /* If success */
-    session_start();
     $_SESSION['id'] = $id;
     $_SESSION['name'] = $members[$id]['name'];
+  }catch(Exception e){
+  
+  }
 ?>
 <meta http-equiv="refresh" content="0;url=index.php" />
 
