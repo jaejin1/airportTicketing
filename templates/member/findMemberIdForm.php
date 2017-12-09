@@ -21,13 +21,13 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <!--위의 상단바-->
 <?php
-  include "./headSideBar.php";
+  include GROUD_DIR."/sidebar.php";
 ?>
 
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
   <?php
-    include GROUND_ROOT . "/header.php";
+    include GROUD_DIR . "/header.php";
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
@@ -38,7 +38,7 @@ Licence URI: http://www.os-templates.com/template-terms
 		<p class="findId_info">E-MAIL로 아이디 찾기</p>
 		<div class="findId_label">
 			<p class="findId">회원가입 당시 입력한 이름과 E-메일 주소로 일치하는 계정을 찾습니다.</p>
-			<form class="findId_form" action="./findMemberIdPro.php">
+			<form class="findId_form" action="<? echo MEMBER_ROOT.'/findMemberIdPro.php'?>">
 				<label class="label_stwid65">이름</label><input type="text" id="name" name="name" style="width:383px;" title="이름을 입력하세요.">
 				<label class="label_stwid65">E-mail</label><input type="text" id="first-email" name="first-email" title="이메일ID" style="width:84px;"> @
 				<input type="text" id="last-email" name="last-email" title="이메일 도메인주소" style="width:114px;" readonly="readonly">

@@ -1,6 +1,5 @@
 <?php
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/a_team/a_team5/earthport/config/config.php';
  ?>
 
 <!DOCTYPE html>
@@ -35,7 +34,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- End Top Background Image Wrapper -->
 
 <div class="insertMember" style="background-image:url('../../earhome/images/demo/backgrounds/bg.jpg');">
-  <form action="./insertPro.php" method="post">
+  <form action="<?php MEMBER_ROOT.'/insertMemberPro.php'?>" method="post">
     <table class="insertMember-table">
       <tr class="insertMember-header">
         <td>회원가입</td>

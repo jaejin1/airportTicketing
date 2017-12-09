@@ -1,6 +1,5 @@
 <?php
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/a_team/a_team5/earthport/config/config.php';
  ?>
 
 <!DOCTYPE html>
@@ -16,32 +15,48 @@ Licence URI: http://www.os-templates.com/template-terms
 <title>EARPORT</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="./layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
 <!--위의 상단바-->
 <?php
+<<<<<<< HEAD:templates/myPageMain.php
+  include GROUND_DIR."/sideBar.php";
+?>
+
+<!-- Top Background Image Wrapper -->
+<div class="bgded overlay" style="background-image:url('./images/demo/backgrounds/bg.jpg');">
+  <?php
+    include GROUND_DIR."/header.php";
+=======
   include GROUND_DIR . "/sideBar.php";
+  //include "./headSideBar.php";
+
 ?>
 
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
   <?php
     include GROUND_DIR . "/header.php";
+>>>>>>> upstream/master:templates/search/searchGrade.php
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
-
-<!--찾는 부분-->
-<!-- 예매 찾자!-->
+<?php
+  
+?>
 <!--footer 부분-->
 <?php
-  include GROUND_DIR . "/footer.php";
+<<<<<<< HEAD:templates/myPageMain.php
+  include GROUND_DIR."/footer.php";
+=======
+include GROUND_DIR . "/footer.php";
+>>>>>>> upstream/master:templates/search/searchGrade.php
 ?>
+
 <!-- JAVASCRIPTS -->
 <?php
   include GROUND_DIR . "/javascriptpart.php";
 ?>
-
 </body>
 </html>

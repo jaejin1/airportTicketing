@@ -21,7 +21,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <!--위의 상단바-->
 <?php
-  include GROUND_DIR . "/sideBar.php";
+  include GROUND_DIR."/sideBar.php";
 ?>
 
 <!-- Top Background Image Wrapper -->
@@ -31,9 +31,20 @@ Licence URI: http://www.os-templates.com/template-terms
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
-
-<!--찾는 부분-->
-<!-- 예매 찾자!-->
+<!--find password-->
+<div class="findPassword"> 
+  <div class="login">
+      <form action ="<?echo MEMBER_ROOT.'/findPasswordPro.php'?>" method="post">
+          <i class="fa fa-user fa-4x"  aria-hidden="true"></i>
+        <input type="text" name="USER_ID" placeholder="아이디" required="required" />
+          <!--<i class="fa fa-lock fa-4x" aria-hidden="true"></i>-->  <!--요기에 second infomation 추가해준다.-->
+        <!--<input type="password" name="passwd" placeholder="비밀번호" required="required" />-->
+        <button type="submit" class="btn btn-primary btn-block btn-lg">
+          <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>비밀번호 찾기
+        </button>
+      </form>
+    </div>
+</div>
 <!--footer 부분-->
 <?php
   include GROUND_DIR . "/footer.php";

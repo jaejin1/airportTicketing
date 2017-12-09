@@ -1,6 +1,5 @@
 <?php
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/a_team/a_team5/earthport/config/config.php';
  ?>
 
 <!DOCTYPE html>
@@ -22,6 +21,8 @@ Licence URI: http://www.os-templates.com/template-terms
 <!--위의 상단바-->
 <?php
   include GROUND_DIR . "/sideBar.php";
+  //include "./headSideBar.php";
+
 ?>
 
 <!-- Top Background Image Wrapper -->
@@ -31,17 +32,17 @@ Licence URI: http://www.os-templates.com/template-terms
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
-
-<!--찾는 부분-->
-<!-- 예매 찾자!-->
+<?php
+  echo "등급"
+?>
 <!--footer 부분-->
 <?php
-  include GROUND_DIR . "/footer.php";
+include GROUND_DIR . "/footer.php";
 ?>
+
 <!-- JAVASCRIPTS -->
 <?php
   include GROUND_DIR . "/javascriptpart.php";
 ?>
-
 </body>
 </html>
