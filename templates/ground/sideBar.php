@@ -22,7 +22,7 @@
     </div>
     <div class="fl_right">
       <ul class="nospace inline pushright">
-        <li><i class="fa fa-user"></i> <a href= "<?php echo MEMBER_ROOT."/insertmember.php"?>">회원가입</a></li>
+        <li><i class="fa fa-user"></i> <a href= "<?php echo MAIN_ROOT.'/member/insertmember.php' ?>">회원가입</a></li>
         <?php
           if(!isset($_SESSION["id"]) || !isset($_SESSION["name"])){
             echo '<li><i class="fa fa-sign-in"></i> <a href="'?><?php echo MAIN_ROOT . '/login/login.php">로그인</a></li>';

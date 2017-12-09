@@ -1,7 +1,7 @@
 <?php
   //echo getcwd()."/ground/sideBar.php";
   //echo $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
-  include_once $_SERVER['DOCUMENT_ROOT'] ."/a_team/a_team5/earthport/config/config.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/a_team/a_team5/earthport/config/config.php";
 
 ?>
 
@@ -24,7 +24,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!--위의 상단바-->
 <?php
   include GROUND_DIR.'/sideBar.php';
-?>  
+?>
 
 <div class="bgded overlay" style="background-image:url('./images/demo/backgrounds/bg.jpg');">
   <?php

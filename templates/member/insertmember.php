@@ -21,7 +21,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <!--위의 상단바-->
 <?php
-  include GROUND_ROOT . "/sideBar.php";
+  include GROUND_DIR . "/sideBar.php";
   //include "./headSideBar.php";
 
 ?>
@@ -29,7 +29,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
   <?php
-    include GROUND_ROOT . "/header.php";
+    include GROUND_DIR . "/header.php";
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
@@ -60,8 +60,8 @@ Licence URI: http://www.os-templates.com/template-terms
       </tr>
       <tr class="insertMember-table">
         <td class="insertMember-label">성 별</td>
-        <td class="insertMember-value"><input type="radio" size="6" name="sex" value="남">&nbsp;<label>남성</label>
-          <input type="radio" size="6" name="sex" value="여">&nbsp;<label>여성</label></td>
+        <td class="insertMember-value"><input type="radio" size="1" name="sex" value="남">&nbsp;<label>남성</label>
+          <input type="radio" size="1" name="sex" value="여">&nbsp;<label>여성</label></td>
       </tr>
       <tr class="insertMember-table">
         <td class="insertMember-label">생년월일</td>
@@ -77,12 +77,12 @@ Licence URI: http://www.os-templates.com/template-terms
 
 <!--footer 부분-->
 <?php
-include GROUND_ROOT . "/footer.php";
+include GROUND_DIR . "/footer.php";
 ?>
 
 <!-- JAVASCRIPTS -->
 <?php
-  include GROUND_ROOT . "/javascriptpart.php";
+  include GROUND_DIR . "/javascriptpart.php";
 ?>
 </body>
 </html>
