@@ -1,6 +1,7 @@
 <?php
-  include_once SERVER_ROOT . '/a_team/a_team5/earthport/config/db_connect.php';
-  include_once SERVER_ROOT . '/a_team/a_team5/earthport/config/config.php';
+  include_once $_SERVER['DOCUMENT_ROOT']."/a_team/a_team5/earthport/config/config.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/a_team/a_team5/earthport/config/db_connect.php";
+
 
  ?>
 
@@ -37,7 +38,7 @@
 
             </ul>
           </li>
-          <li><a href="<?echo MAINT_ROOT?>">Earport 365</a></li>
+          <li><a href="<?echo MAIN_ROOT?>">Earport 365</a></li>
           <li><a class="drop" href="<?echo MAIN_ROOT?>/myPageMain.php">마이 페이지</a>
             <ul>
               <li><a href="<?echo MAIN_ROOT?>/myPageMain.php">페이지 메인</a></li>
@@ -48,5 +49,5 @@
           </li>
         </ul>
       </nav>
-    </header> 
+    </header>
   </div>

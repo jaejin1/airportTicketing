@@ -9,7 +9,7 @@
 	}
 	else
 	{
-		//echo "Connected!";
+		echo "Connected!";
  }
  	//echo "<br />";
  	//echo "<br />";

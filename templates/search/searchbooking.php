@@ -21,13 +21,13 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <!--위의 상단바-->
 <?php
-  include GROUND_ROOT . "/sideBar.php";
+  include GROUND_DIR . "/sideBar.php";
 ?>
 
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
   <?php
-    include GROUND_ROOT . "/header.php";
+    include GROUND_DIR . "/header.php";
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
@@ -36,11 +36,11 @@ Licence URI: http://www.os-templates.com/template-terms
 
 <!--footer 부분-->
 <?php
-  include GROUND_ROOT . "/footer.php";
+  include GROUND_DIR . "/footer.php";
 ?>
 <!-- JAVASCRIPTS -->
 <?php
-  include GROUND_ROOT . "/javascriptpart.php";
+  include GROUND_DIR . "/javascriptpart.php";
 ?>
 
 </body>
