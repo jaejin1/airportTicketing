@@ -1,6 +1,6 @@
 <?php
 	session_start();
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
+  include_once SERVER_ROOT . '/a_team/a_team5/earthport/config/db_connect.php'
 
 	$id = $POST['id'];
 	$reg_date = getdate();
@@ -18,23 +18,18 @@
 	echo $sex. "<br>";
 	echo $email. "<br>";
 
-
-
 	//$query = "INSERT INTO MEMBER VALUES (".$id.",".$reg_date.",".$passwd.",".$name.",".$birthday.",".$sex.",".$email.")";
-
-	$query = "insert into member values ('$id', '$reg_date', '$passwd', '$name', '$birthday','$sex', '$email');";
-
+	$query = "update member set id = '$id', reg_date = '$reg_date', passwd = '$passwd', name = '$name', birthday = '$birthday', sex = '$sex', email = '$email');";
 	try {
 		//$result = oci_execute($query, $conn);
 		$result = oci_parse($conn, $query);
 		oci_execute($result);
-		oci_commit($result);
 		echo $query;
 
 	} catch (Exception $e) {
 		echo $e->getMessage();
-		echo "오류입니다.";
-		echo "<script>alert(잘못된 접근입니다.);</script>";
+		#echo "오류입니다.";
+		echo "<script>alert('완료 하지 못하였습니다.');</script>";
 	}
 
 	oci_close($conn);

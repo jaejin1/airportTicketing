@@ -31,37 +31,20 @@ Licence URI: http://www.os-templates.com/template-terms
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
-<?php
-  //if(!isset($_SESSION['id']) || !isset($_SESSION['name'])){ ?>
-  <!--로그인 부분-->
-  <div class="login-back">
-    <div class="login">
-      <form action ="<?echo MEMBER_ROOT.'/loginPro.php'?>" method="post">
+<!--find password-->
+<div class="findPassword"> 
+  <div class="login">
+      <form action ="<?echo MEMBER_ROOT.'/findPasswordPro.php'?>" method="post">
           <i class="fa fa-user fa-4x"  aria-hidden="true"></i>
-        <input type="text" name="id" placeholder="아이디" required="required" />
-          <i class="fa fa-lock fa-4x" aria-hidden="true"></i>
-        <input type="password" name="passwd" placeholder="비밀번호" required="required" />
+        <input type="text" name="USER_ID" placeholder="아이디" required="required" />
+          <!--<i class="fa fa-lock fa-4x" aria-hidden="true"></i>-->  <!--요기에 second infomation 추가해준다.-->
+        <!--<input type="password" name="passwd" placeholder="비밀번호" required="required" />-->
         <button type="submit" class="btn btn-primary btn-block btn-lg">
-          <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>로그인
+          <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>비밀번호 찾기
         </button>
       </form>
     </div>
-
-    <ul class="login-util" style="visibility:visible">
-      <li><span class="login-util-type"><a href= "<?echo MEMBER_ROOT.'/findMemberIdForm.php'?>">아이디 찾기</a></span></li>
-      <li><span class="login-util-type"><a href="<?echo MEMBER_ROOT.'/insertmember.php'?>" title="회원 가입하기 새창열기">회원가입 하기</a></span></li>
-      <li><span class="login-util-type"><a href="<?echo MEMBER_ROOT.'/findPassWordForm.php'?>">비밀번호 찾기</a></span></li>
-    </ul>
-  </div>
-  <?php//}else{
-  //  $id = $_SESSION['id'];
-  //  $name = $_SESSION['name'];
-    //echo '<p><strong>$user_name</strong>($user_id)님은 이미 로그인하고 있습니다.';
-    //echo '<a href="../earportMain.php">[돌아가기]</a> ';
-    //echo '<a href="./logout.php">[로그아웃]</a></p>';
-  //}
-  ?>
-
+</div>
 <!--footer 부분-->
 <?php
   include GROUND_DIR . "/footer.php";

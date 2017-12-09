@@ -1,6 +1,5 @@
 <?php
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
-  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+  include_once $_SERVER['DOCUMENT_ROOT'].'/a_team/a_team5/earthport/config/config.php';
  ?>
 
 <!DOCTYPE html>
@@ -21,7 +20,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <!--위의 상단바-->
 <?php
-  include GROUND_ROOT . "/sideBar.php";
+  include GROUND_DIR . "/sideBar.php";
   //include "./headSideBar.php";
 
 ?>
@@ -29,13 +28,13 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- Top Background Image Wrapper -->
 <div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
   <?php
-    include GROUND_ROOT . "/header.php";
+    include GROUND_DIR . "/header.php";
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
 
 <div class="insertMember" style="background-image:url('../../earhome/images/demo/backgrounds/bg.jpg');">
-  <form action="./insertPro.php" method="post">
+  <form action="<?php MEMBER_ROOT.'/insertMemberPro.php'?>" method="post">
     <table class="insertMember-table">
       <tr class="insertMember-header">
         <td>회원가입</td>
@@ -77,12 +76,12 @@ Licence URI: http://www.os-templates.com/template-terms
 
 <!--footer 부분-->
 <?php
-include GROUND_ROOT . "/footer.php";
+include GROUND_DIR . "/footer.php";
 ?>
 
 <!-- JAVASCRIPTS -->
 <?php
-  include GROUND_ROOT . "/javascriptpart.php";
+  include GROUND_DIR . "/javascriptpart.php";
 ?>
 </body>
 </html>

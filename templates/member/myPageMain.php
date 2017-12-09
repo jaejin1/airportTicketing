@@ -1,7 +1,6 @@
 <?php
-  include_once $_SERVER['DOCUMENT_ROOT'].'/a_team/a_team5/earthport/config/config.php';
-  #session_start()
- ?>
+	include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+?>
 
 <!DOCTYPE html>
 <!--
@@ -21,34 +20,31 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 <!--위의 상단바-->
 <?php
-  include GROUND_DIR . "/sideBar.php";
-  //include "./headSideBar.php";
-
+  include GROUND_ROOT."/headSideBar.php";
 ?>
 
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
+<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');"> 
   <?php
-    include GROUND_DIR . "/header.php";
+    include GROUND_ROOT."/header.php";
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
-  <!-- db에서 가져온다. 각각의 자리에 입력.. class 이름도 바꾼다.ctrl + d 연속 누르면 선택 가능.. sublimetext 만 가능.-->
-<div class="insertMember" style="background-image:url('../../earhome/images/demo/backgrounds/bg.jpg');">
-  <form action="<?php MEMBER_ROOT.'/updateMemberPro.php'?>" method="post">
+<!-- 마이 페이지 부분-->
+<!--여기에는 내 정보들 보여준다.
+	버튼 하나 추가해서 (수정버튼) 수정폼으로 이동할 수 있도록!..-->
+	<!--전부 비활성화 시킨다. class 이름도 바꾼다.-->
+	<div class="insertMember" style="background-image:url('../../earhome/images/demo/backgrounds/bg.jpg');">
+  <form action="<?php MEMBER_ROOT.'/updateMemberForm.php'?>" method="post">
     <table class="insertMember-table">
       <tr class="insertMember-header">
         <td>회원가입</td>
       </tr>
-    </table><!--비활성화 시킨다.-->
+    </table>
     <table class="insertMember-table">
       <tr class="insertMember-info">
         <td class="insertMember-label">회원 ID</td>
-        <td class="insertMember-value">
-          <form action="<?echo SEARCH_ROOT.'searchId.php'?>" method="post">
-          <input type="text" name="id" maxlength="20">&nbsp; <input type="submit" value="[ID 중복 검사]">
-          </form>
-        </td>
+        <td class="insertMember-value"><input type="text" name="id" maxlength="20">&nbsp; <a href="">[ID 중복 검사]</a></td>
       </tr>
       <tr class="insertMember-table">
         <td class="insertMember-label">비밀번호</td>
@@ -76,17 +72,16 @@ Licence URI: http://www.os-templates.com/template-terms
         <td class="insertMember-value"><input type="text" name="email" maxlength="30"></td>
       </tr>
     </table>
-    <input type="submit" name="insertmember" value="회원가입">
+    <input type="submit" name="insertmember" value="수정">
   </form>
-
 <!--footer 부분-->
 <?php
-include GROUND_DIR . "/footer.php";
+  include GROUND_ROOT."/footer.php";
 ?>
-
 <!-- JAVASCRIPTS -->
 <?php
-  include GROUND_DIR . "/javascriptpart.php";
+  include GROUND_ROOT . "/javascriptpart.php";
 ?>
+
 </body>
 </html>

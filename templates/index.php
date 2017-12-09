@@ -39,7 +39,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
 <!-- End Top Background Image Wrapper -->
 <?php
-  include MAIN_DIR . "/article_all.php";
+  include MAINPAGE_DIR . "/article_all.php";
 ?>
 
 <!--footer-->
