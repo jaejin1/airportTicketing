@@ -22,17 +22,18 @@
     </div>
     <div class="fl_right">
       <ul class="nospace inline pushright">
-        <li><i class="fa fa-user"></i> <a href= "<?php echo MAIN_ROOT.'/member/insertmember.php' ?>">회원가입</a></li>
-        <?php
-          if(!isset($_SESSION["id"]) || !isset($_SESSION["name"])){
-            echo '<li><i class="fa fa-sign-in"></i> <a href="'?><?php echo MAIN_ROOT . '/login/login.php">로그인</a></li>';
+        <?
+          if(!isset($_SESSION["ID"])){
+            ?>
+            <li><i class="fa fa-user"></i> <a href= "<?php echo MAIN_ROOT.'/member/insertmember.php' ?>">회원가입</a></li>
+            <?echo '<li><i class="fa fa-sign-in"></i> <a href="'?><?php echo MAIN_ROOT . '/login/login.php">로그인</a></li>';
           }else{
-            $user_id = $_SESSION["id"];
-            $user_name = $_SESSION["name"];
-            echo '<p><strong>$user_name</strong>($user_id)님 반갑습니다.';
-            echo '<li><i class="fa fa-sign-in"></i> <a href="'?><? echo MAIN_ROOT . '/login/logout.php">로그아웃</a></li>';
+            //로그아웃
+            echo $_SESSION["ID"].'님 어서오세요.   ';
+            echo '<li><i class="fa fa-sign-in"></i> <a href="'?><?php echo MAIN_ROOT . '/login/logout.php">로그아웃</a></li>';
           }
-          ?>
+        ?>
+
       </ul>
     </div>
   </div>

@@ -36,9 +36,9 @@ Licence URI: http://www.os-templates.com/template-terms
   <!--로그인 부분-->
   <div class="login-back">
     <div class="login">
-      <form action ="<?echo MEMBER_ROOT.'/loginPro.php'?>" method="post">
+      <form action ="<?echo LOGIN_ROOT?>/loginPro.php" method="post">
           <i class="fa fa-user fa-4x"  aria-hidden="true"></i>
-        <input type="text" name="id" placeholder="아이디" required="required" />
+        <input type="text" name="USER_ID" placeholder="아이디" required="required" />
           <i class="fa fa-lock fa-4x" aria-hidden="true"></i>
         <input type="password" name="passwd" placeholder="비밀번호" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-lg">
@@ -48,11 +48,12 @@ Licence URI: http://www.os-templates.com/template-terms
     </div>
 
     <ul class="login-util" style="visibility:visible">
-      <li><span class="login-util-type"><a href= "<?echo MEMBER_ROOT.'/findMemberIdForm.php'?>">아이디 찾기</a></span></li>
-      <li><span class="login-util-type"><a href="<?echo MEMBER_ROOT.'/insertmember.php'?>" title="회원 가입하기 새창열기">회원가입 하기</a></span></li>
-      <li><span class="login-util-type"><a href="<?echo MEMBER_ROOT.'/findPassWordForm.php'?>">비밀번호 찾기</a></span></li>
+      <li><span class="login-util-type"><a href= "<?echo MEMBER_ROOT?>/findMemberIdForm.php">아이디 찾기</a></span></li>
+      <li><span class="login-util-type"><a href="<?echo MAIN_ROOT."/member"?>/insertmember.php" title="회원 가입하기 새창열기">회원가입 하기</a></span></li>
+      <li><span class="login-util-type"><a href="#">비밀번호 찾기</a></span></li>
     </ul>
   </div>
+
   <?php//}else{
   //  $id = $_SESSION['id'];
   //  $name = $_SESSION['name'];

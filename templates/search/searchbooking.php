@@ -33,7 +33,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- End Top Background Image Wrapper -->
 
 <!--찾는 부분-->
-<!-- 예매 찾자!-->
+
 <!--footer 부분-->
 <?php
   include GROUND_DIR . "/footer.php";
