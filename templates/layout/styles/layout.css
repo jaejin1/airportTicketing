@@ -22,7 +22,7 @@ File: Layout CSS
 
 /*login
 --------------------------------------------------------------------------------------------------------------- */
-.login {
+.login ,.searchGrade ,.myPageInfo{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -31,7 +31,16 @@ File: Layout CSS
     height: 300px;
     text-align: center;
 }
-.login-back {
+.searchGrade{
+    color: #000000;
+    width: 350px;
+}
+.myPageInfo{
+    width: 1400px;
+    height: 1000px;
+    width: 100%;
+}
+.login-back, .searchGrade-back , .myPageInfo-back{
     width: 100%;
     height: 1000px;
     background-image: url('../../images/demo/backgrounds/bg.jpg');

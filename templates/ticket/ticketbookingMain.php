@@ -11,8 +11,6 @@
     <?
   }
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +46,7 @@ Licence URI: http://www.os-templates.com/template-terms
 	<!--티켓 예약 부분-->
 	<div class="ticketing-back ">
 		<div class="ticketing">
-			<form id="searchFlight" action="<? echo TICKET_ROOT.'ticketbookingForm'?>" method="post">
+			<form id="searchFlight" action="<? echo TICKET_ROOT.'/ticketbookingForm.php'?>" method="post">
 				<ui class="where">
 					<li class="whereStarting">
 						<label for="startingCity">출발지</label>
@@ -62,11 +60,11 @@ Licence URI: http://www.os-templates.com/template-terms
 				<ui class="when">
 					<li class="whenDateDeparture">
 						<label for="departureDate">가는날</label>
-						<input type="text" name="DEPARTURE_DATE" placeholder="가는날" required="required" />
+						<input type="date" name="DEPARTURE_DATE" placeholder="가는날" required="required" />
 					</li>
 					<li class="whenDateArrive">
 						<label for="arriveDate">오는날</label>
-						<input type="text" name="ARRIVIE_DATE" placeholder="오는날" required="required" />
+						<input type="date" name="ARRIVIE_DATE" placeholder="오는날" required="required" />
 					</li>
 				</ui>
 				<ui>

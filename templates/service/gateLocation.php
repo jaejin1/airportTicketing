@@ -1,6 +1,13 @@
 <?php
   include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
   include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+
+  $query = "select * from gate";
+
+  $stmt = oci_parse($conn, $query);
+  oci_execute($stmt);
+
+  
  ?>
 
 <!DOCTYPE html>
@@ -31,8 +38,26 @@ Licence URI: http://www.os-templates.com/template-terms
   ?>
 </div>
 <!-- End Top Background Image Wrapper -->
-  <!--정보 제공형 페이지 게이트 번호와 위치만 알려준다.-->
-  
+  <!--정보 제공형 페이지. 게이트 번호와 위치만 알려준다.-->
+  <div class="searchGateLoc-back">
+		<div class="searchGateLoc">
+			<table border=1 cellspacing=0 cellpadding=5>
+				<tr class="location">
+					<td>게이트 번호</td>	<!--1-->
+					<td>게이트 위치</td>	<!--2-->
+				</tr>
+				<? while (($row_num = oci_fetch_all($stmt,$row)) != false) {
+					# code...
+				}{?>
+			<tr> 
+				<td class="gateNo"><?=$row_num['GATE_NO']?></td>			<!--게이트 번호.-->
+				<td class="location"><?=$row_num['LOCATION']?>"></td>		<!--게이트 위치-->
+			</tr>
+		<? } ?>
+	</table> 
+
+</div>
+</div>
 
 
 <!--footer 부분-->

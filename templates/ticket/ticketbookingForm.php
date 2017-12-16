@@ -5,12 +5,7 @@
 
 	//로그인 되어있으면 //예매 확인. 없으면 예매 조회로.
 	if(isset($_SESSION["ID"])){
-    ?>
-    <script>
-      alert('로그인이 필요합니다.');
-    	document.location.href="../login/login.php";
-    </script>
-    <?
+    //디비에서 받아오기.
   }
 ?>
 
@@ -24,7 +19,7 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-	<title>EARPORT</title>
+	<title>EARTHPORT</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
