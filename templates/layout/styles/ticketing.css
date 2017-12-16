@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.ticketing-back {
+.ticketing-back , .searchTicketing-back{
     width: 100%;
     height: 1000px;
     background-image: url('../../images/demo/backgrounds/bg.jpg');
@@ -22,7 +22,7 @@
     background-size: 100% 100%;
 }
 
-.whereStarting, .whereDestination , .whenDateDeparture, .whereStarting{
+.whereStarting, .whereDestination , .whenDateDeparture, .whenDateArrive{
 	width: 100%;
 	list-style: none;
 	float: left;
