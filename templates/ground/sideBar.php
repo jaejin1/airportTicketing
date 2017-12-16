@@ -30,9 +30,7 @@
           }else{
             //로그아웃
             echo $_SESSION["ID"].'님 어서오세요.   ';
-            ?>
-            <li><i class="fa fa-user"></i> <a href= "<?php echo MAIN_ROOT.'/member/updateMemberForm.php' ?>">회원정보수정</a></li>
-            <?
+            
             echo '<li><i class="fa fa-sign-in"></i> <a href="'?><?php echo MAIN_ROOT . '/login/logout.php">로그아웃</a></li>';
           }
         ?>
