@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
   session_start();
   include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
 
@@ -10,6 +11,12 @@
     </script>
     <?
   }
+=======
+include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+session_start();
+
+>>>>>>> fe7fc706a641ad5491519507695c63cbe8212d44
 ?>
 
 <!DOCTYPE html>
@@ -66,20 +73,22 @@ Licence URI: http://www.os-templates.com/template-terms
 						<input type="text" name="ARRIVIE_DATE" placeholder="오는날" required="required" />
 					</li>
 				</ui>
-				<button type="submit" class="btn btn-primary btn-block btn-lg">
-					<i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>항공권 검색
-				</form>
-			</div>
-
+				<ui>
+					<button type="submit" class="btn btn-primary btn-block btn-lg">
+						<i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>항공권 검색
+					</button>
+				</ui>
+			</form>
 		</div>
-		<!--footer 부분-->
-		<?php
-		include GROUND_DIR . "/footer.php";
-		?>
-		<!-- JAVASCRIPTS -->
-		<?php
-		include GROUND_DIR . "/javascriptpart.php";
-		?>
+	</div>
+	<!--footer 부분-->
+	<?php
+	include GROUND_DIR . "/footer.php";
+	?>
+	<!-- JAVASCRIPTS -->
+	<?php
+	include GROUND_DIR . "/javascriptpart.php";
+	?>
 
-	</body>
-	</html>
+</body>
+</html>
