@@ -1,8 +1,22 @@
 <?php
+<<<<<<< HEAD
+  session_start();
+  include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
+
+  if(!isset($_SESSION["ID"])){
+    ?>
+    <script>
+      alert('로그인이 필요합니다.');
+    	document.location.href="../login/login.php";
+    </script>
+    <?
+  }
+=======
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
 session_start();
 
+>>>>>>> fe7fc706a641ad5491519507695c63cbe8212d44
 ?>
 
 <!DOCTYPE html>
