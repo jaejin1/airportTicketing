@@ -1,6 +1,7 @@
 <?php
+  session_start();
+
   include_once $_SERVER['DOCUMENT_ROOT']."/a_team/a_team5/earthport/config/config.php";
-  include_once $_SERVER['DOCUMENT_ROOT']."/a_team/a_team5/earthport/config/db_connect.php";
 
 
  ?>
@@ -30,22 +31,26 @@
               <li><a href="<?echo SERVICE_ROOT?>/gate">게이트 위치</a></li>
               <li><a href="<?echo SERVICE_ROOT?>/">등급별 혜택</a>
                 <ul>
-                  <li><a href="#">등급 조회</a></li>
-                  <li><a href="#">등급별 혜택 안내</a></li>
+                  <li><a href="<?echo SERVICE_ROOT?>/grade.php">등급 조회</a></li>
+                  <li><a href="<?echo SERVICE_ROOT?>/grade_all.php">등급별 혜택 안내</a></li>
                 </ul>
               </li>
 
             </ul>
           </li>
           <li><a href="<?echo MAIN_ROOT?>">Earport 365</a></li>
-          <li><a class="drop" href="<?echo MAIN_ROOT?>/myPageMain.php">마이 페이지</a>
-            <ul>
-              <li><a href="<?echo MAIN_ROOT?>/myPageMain.php">페이지 메인</a></li>
-              <li><a href="<?echo SEARCH_ROOT?>/searchbooking.php">예약 확인</a></li>
-              <li><a href="<?echo MEMBER_ROOT?>/updateMemberForm.php">회원 정보 수정</a></li>
-              <li><a href="<?echo MEMBER_ROOT?>/deleteMemberForm.php">회원 탈퇴</a></li>
-            </ul>
-          </li>
+          <? if(!isset($_SESSION["ID"])){ ?>
+
+          <?} else {?>
+            <li><a class="drop" href="<?echo MAIN_ROOT?>/myPageMain.php">마이 페이지</a>
+              <ul>
+                <li><a href="<?echo MAIN_ROOT?>/myPageMain.php">페이지 메인</a></li>
+                <li><a href="<?echo SEARCH_ROOT?>/searchbooking.php">예약 확인</a></li>
+                <li><a href=<?php echo MAIN_ROOT.'/member/updateMemberForm.php' ?>>회원 정보 수정</a></li>
+                <li><a href="<?echo MEMBER_ROOT?>/deleteMemberForm.php">회원 탈퇴</a></li>
+              </ul>
+            </li>
+          <?} ?>
         </ul>
       </nav>
     </header>
