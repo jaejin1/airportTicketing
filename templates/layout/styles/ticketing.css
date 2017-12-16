@@ -4,7 +4,7 @@
 @import url("framework.css");
 @import url("layout.css");
 
-.ticketing {
+.ticketing , .searchTicketing{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -22,11 +22,10 @@
     background-size: 100% 100%;
 }
 
-.whereStarting, .whereDestination , .whenDateDeparture, .whenDateArrive{
+.whereStarting, .whereDestination , .whenDateDeparture, .whenDateArrive ,.findTicketing_f{
 	width: 100%;
 	list-style: none;
 	float: left;
 	display: list-item;
 	color: #000000;
-	
 }

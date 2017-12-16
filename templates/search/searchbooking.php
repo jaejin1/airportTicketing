@@ -36,11 +36,11 @@ Licence URI: http://www.os-templates.com/template-terms
 	<!--찾는 부분-->
 	<div class="searchTicketing-back">
 		<div class="searchTicketing">
-			<form id="searchFlight" action="<? echo TICKET_ROOT.'ticketbookingForm'?>" method="post" target="_blank">
+			<form id="searchFlight" action="<? echo TICKET_ROOT.'/ticketbookingForm.php'?>" method="post" target="_blank">
 				<ui class="findTicketing">
-					<li class="whereStarting">
+					<li class="findTicketing_f">
 						<label for="startingCity">예매 번호</label>
-						<input type="text" name="starting" placeholder="출발지" required="required" />
+						<input type="text" name="starting" placeholder="예매 번호" required="required" />
 					</li>
 					<button type="submit" class="btn btn-primary btn-block btn-lg">
 						<i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>예매 조회하기
