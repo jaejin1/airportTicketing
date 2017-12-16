@@ -37,7 +37,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- End Top Background Image Wrapper -->
 
 <div>
-
+  <!--정보 제공 페이지-->
   <table>
     <tr>
       <td>등급별 혜택</td>

@@ -68,6 +68,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
 
     ?>
+    <!--여기도 정보 페이지 본인의 회원 등급과 할인율 알려주고 나머지 등급들의 할인율 알려주기.-->
     <h3> 회원등급은 <?echo $row["GRADE"][0]; ?> 입니다. </h3>
     <h3> 회원등급에 따른 할인율은  <?echo $row["DISCOUNT"][0]; ?>% 입니다. </h3>
 
