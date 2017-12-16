@@ -10,7 +10,7 @@
 	$name = $_POST['name'];
 	$birthday = $_POST['birth'];
 	$sex = $_POST['sex'];
-	$email = $_POST['email'];
+	$email = $_POST['email1'].$_POST['email2'];
 
 	$query = "insert into member values ('$id', sysdate, '$passwd', '$name', '$birthday','$sex', '$email','normal')";
 

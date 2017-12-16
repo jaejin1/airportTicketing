@@ -6,7 +6,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/confi
 	$stmt = oci_parse($conn, $query);
 	oci_execute($stmt);
 
-	$row_num = oci_fetch_all($stmt, $row);
+	//$row_num = oci_fetch_all($stmt, $row);
 
 ?>
 
@@ -59,24 +59,21 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td>게이트 번호</td>	<!--9-->
 					<td>좌석 번호</td>		<!--10-->
 				</tr>
-				<!-- 
-				<? while($row_num = oci_fetch_all($stmt, $row)) : 
-			$birth = substr($row_num[birth], 0, 4) . "년 " . substr($row_num[birth], 4, 2) . "월 " . substr($row_num[birth], 6, 2) . "일";
-			?>-->
+			
+				<? while($row_num= oci_fetch_array($stmt, $OCI_BOTH)){?>
 			<tr> 
 				<td class="num"><?=$row_num["TICKETING_NO"]?></td>			<!--운항편 번호.-->
-				<td><a href="modify.php?record=<?=$row_num[recnord]?>">
-					<?=$row_num[name]?></a></td>							<!--예매 번호. 가격 확인 alert -->
+																			<!--예매 번호. 가격 확인 alert -->
 					<td><?=$row_num["STARTING"]?></td>							<!--출발지-->
 					<td><?=$row_num["DESTINATION"]?></td>						<!--도착지-->
 					<td><?=$row_num["TIME"]?></td>								<!--탑승 시간-->
-					<td><?=$row_num[""]?></td>									<!--비행기 번호 클릭시 조회 가능. sql in 해야함-->
+					<!--<td><?=$row_num[""]?></td>	-->								<!--비행기 번호 클릭시 조회 가능. sql in 해야함-->
 					<td><?=$row_num["DEPARTURE_DATE"]?></td>					<!--가는 날-->
 					<td><?=$row_num["ARRIVAL_DATE"]?></td>						<!--오는 날-->
-					<td><?=$row_num[""]?></td>									<!--게이트 번호 sql in 해야함-->
-					<td><?=$row_num[""]?></td>									<!--좌석 번호 sql in 해야함-->
+					<!--<td><?=$row_num[""]?></td>			-->								<!--게이트 번호 sql in 해야함-->
+				<!--	<td><?=$row_num[""]?></td>			-->								<!--좌석 번호 sql in 해야함-->
 				</tr>
-			<? endwhile; ?>
+			<? } ?>
 		</table> 
 
 	</div>

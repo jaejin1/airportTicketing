@@ -6,7 +6,7 @@
 
 	$name = $_POST['name'];
 	$fstemail = $_POST['email1'];
-	$lstemail = $_POST['email2'];
+	$lstemail = $_POST['email_select'];
 
 
 	$email = $fstemail.'@'.$lstemail;
