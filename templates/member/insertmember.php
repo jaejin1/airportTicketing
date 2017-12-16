@@ -118,7 +118,7 @@ function check_pw(val){
   <form action="./insertPro.php" method="post" name="userinput">
     <table class="insertMember-table">
       <tr class="insertMember-header">
-        <td>회원가입</td>
+        <td>항공 스케줄</td>
       </tr>
     </table>
     <table class="insertMember-table">

@@ -25,8 +25,8 @@ include_once $_SERVER['DOCUMENT_ROOT']."/a_team/a_team5/earthport/config/config.
         </li>
         <li><a class="drop" href="<?echo SEARCH_ROOT."/serviceMain.php"?>">서비스 안내</a>
           <ul>
-            <li><a href="<?echo SERVICE_ROOT?>/gate">게이트 위치</a></li>
-            <li><a href="<?echo SERVICE_ROOT?>/">등급별 혜택</a>
+            <li><a href="<?echo SERVICE_ROOT?>/gateLocation.php">게이트 위치</a></li>
+            <li><a href="<?echo SERVICE_ROOT?>/grade.php">등급별 혜택</a>
               <ul>
                 <li><a href="<?echo SERVICE_ROOT?>/grade.php">등급 조회</a></li>
                 <li><a href="<?echo SERVICE_ROOT?>/grade_all.php">등급별 혜택 안내</a></li>
@@ -35,7 +35,7 @@ include_once $_SERVER['DOCUMENT_ROOT']."/a_team/a_team5/earthport/config/config.
 
           </ul>
         </li>
-        <li><a href="<?echo MAIN_ROOT?>">Earport 365</a></li>
+        <li><a href="<?echo "../"?>">EARTHPORT 365</a></li>
         <? if(!isset($_SESSION["ID"])){ ?>
 
         <?} else {?>
