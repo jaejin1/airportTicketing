@@ -36,9 +36,9 @@ Licence URI: http://www.os-templates.com/template-terms
 <!--아이디 찾는 부분-->
 <div class="findMemberId">
 	<li>
-		<p class="findId_info">ID 찾기 결과</p>
+		<p class="findId_info">PASSWORD 찾기 결과</p>
 		<div class="findId_label">
-			<p class="findId">회원가입 당시 입력한 이름과 E-메일 주소로 일치하는 계정을 찾습니다.</p>
+			<p class="findId">회원가입 당시 입력한 ID와 이름과 E-메일 주소로 일치하는 계정을 찾습니다.</p>
 
       <?
         $conn = oci_connect("B389064", "B389064","203.249.87.162:1521/orcl");
@@ -47,12 +47,12 @@ Licence URI: http://www.os-templates.com/template-terms
       	$name = $_POST['name'];
       	$fstemail = $_POST['email1'];
       	$lstemail = $_POST['email2'];
-
+        $id = $_POST['id'];
 
       	$email = $fstemail.'@'.$lstemail;
 
 
-      	$query = "select * from MEMBER WHERE name ='".$name."' AND email = '".$email."'";
+      	$query = "select * from MEMBER WHERE name ='".$name."' AND email = '".$email."' AND id = '".$id."'";
 
 
 
@@ -74,7 +74,7 @@ Licence URI: http://www.os-templates.com/template-terms
       		// 아이디있음
       		for($i = 0; $i <$row_num; $i++){
             echo "<div>";
-            echo "<h3> ID는  " . $row["ID"][$i] . "  입니다. </h3>";
+            echo "<h3> password는  " . $row["PASSWD"][$i] . "  입니다. </h3>";
             echo "</div>";
           }
           ?>

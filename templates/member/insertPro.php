@@ -14,6 +14,8 @@
 
 	$query = "insert into member values ('$id', sysdate, '$passwd', '$name', '$birthday','$sex', '$email','normal')";
 
+  echo $query;
+
 	try {
 		//$result = oci_execute($query, $conn);
 		//$result = oci_parse($conn, $query2);

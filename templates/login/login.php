@@ -50,7 +50,7 @@ Licence URI: http://www.os-templates.com/template-terms
     <ul class="login-util" style="visibility:visible">
       <li><span class="login-util-type"><a href= "<?echo MEMBER_ROOT?>/findMemberIdForm.php">아이디 찾기</a></span></li>
       <li><span class="login-util-type"><a href="<?echo MAIN_ROOT."/member"?>/insertmember.php" title="회원 가입하기 새창열기">회원가입 하기</a></span></li>
-      <li><span class="login-util-type"><a href="#">비밀번호 찾기</a></span></li>
+      <li><span class="login-util-type"><a href="<?echo MEMBER_ROOT?>/findMemberpwForm.php">비밀번호 찾기</a></span></li>
     </ul>
   </div>
 
