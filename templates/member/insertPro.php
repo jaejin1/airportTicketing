@@ -10,17 +10,15 @@
 	$name = $_POST['name'];
 	$birthday = $_POST['birth'];
 	$sex = $_POST['sex'];
-
 	$email = $_POST['email'];
 
-	$query = "insert into member values ('$id', sysdate, '$passwd', '$name', '$birthday','$sex', '$email')";
+	$query = "insert into member values ('$id', sysdate, '$passwd', '$name', '$birthday','$sex', '$email','normal')";
+
 	try {
 		//$result = oci_execute($query, $conn);
 		//$result = oci_parse($conn, $query2);
     $parse = oci_parse($conn, $query);
     oci_execute($parse);
-
-    oci_close($conn);
 
     oci_free_statement($result);
     oci_close($conn);

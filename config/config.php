@@ -3,7 +3,6 @@
   define('SERVER_ROOT',$_SERVER['DOCUMENT_ROOT']);
 
   // 문서 PATH
-  define('EARTHPORT_ROOT','/a_team/a_team5/earthport');
   define('MAIN_ROOT', '/a_team/a_team5/earthport/templates');
   define('MEMBER_ROOT', MAIN_ROOT.'/member');
   define('LOGIN_ROOT', MAIN_ROOT.'/login');
