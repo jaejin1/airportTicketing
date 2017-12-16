@@ -17,12 +17,11 @@
           <li class="active"><a href="<?echo MAIN_ROOT?>/">Home</a></li>
           <li><a class="drop" href="<?php echo TICKET_ROOT."/ticketbookingMain.php"?>">항공권 예매</a>
             <ul>
-              <li><a class="drop" href="<?echo TICKET_ROOT."/ticketbooking.php"?>">항공권 예매</a>
-                <ul>
-                  <li><a href="<?echo TICKET_ROOT?>/ticketbooking.php">예매</a></li>
+              
+                  <li><a href="<?echo TICKET_ROOT?>/ticketbookingMain.php">예매</a></li>
                   <li><a href="<?echo SEARCH_ROOT?>/searchbooking.php">예매 조회</a></li> <!--여기는 티켓번호로도 조회 가능-->
-                </ul>
-              </li>
+               
+            
               <li><a href="<?echo SEARCH_ROOT?>/searchSchedul.php">스케줄 조회</a></li>
             </ul>
           </li>

@@ -247,6 +247,10 @@ input::placeholder{
 .split .box .fa-ul > li:last-child{margin-bottom:30px;}
 .split .box .fa-li{position:absolute; top:0; left:0; width:auto; font-size:3rem; line-height:1; text-align:center;}
 
+/* ticketing form
+--------------------------------------------------------------------------------------------------------------- */
+
+
 
 /* Footer
 --------------------------------------------------------------------------------------------------------------- */
@@ -385,6 +389,7 @@ td{border-width:0 1px;}
 
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
+ul,ol {margin:0;padding:0;list-style:none;}
 body{color:#A6A6A6; background-color:#26272B;}
 a{color:#56AED4;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
