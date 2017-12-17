@@ -66,13 +66,19 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td>게이트 번호</td>	<!--9-->
 					<td>예매</td>			<!--10-->
 				</tr>
-
-				<? for ($i=0; $i < $row_num; $i++){
-					//var_dump($row);
-					?>
+				<?
+				if($row_num == 0){
+				?>
+				<tr>
+					<td class ="noSearchSchedul" colspan="10">조회하신 운항편 목록이 없습니다.
+					</td>
+				</tr>
+				<?}else{
+					for ($i=0; $i < $row_num; $i++) { 
+				?>
 				<tr class="titleSchedul">
-					<form action="<?echo TICKET_ROOT.'/bookingPro.php'?>" method="POST">
-						<td name ="TICKETING_NO"><? echo $row["TICKETING_NO"][$i]?></td>						<!--운항편 번호.-->
+					<form action="<?echo TICKET_ROOT.'/bookingPro.php'?>" method="POST" name ="TICKETING_NO">
+						<td><? echo $row["TICKETING_NO"][$i]?></td>						<!--운항편 번호.-->
 					<td><? echo $row["STARTING"][$i]?></td>							<!--출발지-->
 					<td><? echo $row["DESTINATION"][$i]?></td>						<!--도착지-->
 					<td><? echo $row["TIME"][$i]?></td>								<!--탑승 시간-->
@@ -85,7 +91,7 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td ><input type="submit" value="예매"></td>
 					</form>
 				</tr>
-					<? } ?>
+					<? }} ?>
 			</table> 
 		</div>
 	</div>

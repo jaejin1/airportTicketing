@@ -67,7 +67,7 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td>비행기 번호</td>
 					<td>게이트 번호</td>
 					<td>좌석 번호</td>
-					
+					<td>예매 취소</td>
 				</tr>
 				<?
 				if($row_num == 0){
@@ -91,6 +91,7 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td><?echo $row["AIRPORT_NO"][$i]?></td>
 					<td><?echo $row["GATE_NO"][$i]?></td>
 					<td><?echo $row["SEAT_NO"][$i]?></td>
+					<td><input type="submit" name="cancel" value="예매 취소"></td>
 				</tr>
 				<?}}?>
 			</table>
