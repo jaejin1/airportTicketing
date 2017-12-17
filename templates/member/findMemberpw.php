@@ -46,7 +46,7 @@ Licence URI: http://www.os-templates.com/template-terms
 
       	$name = $_POST['name'];
       	$fstemail = $_POST['email1'];
-      	$lstemail = $_POST['email2'];
+      	$lstemail = $_POST['email_select'];
         $id = $_POST['id'];
 
       	$email = $fstemail.'@'.$lstemail;

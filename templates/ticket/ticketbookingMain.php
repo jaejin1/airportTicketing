@@ -46,15 +46,58 @@ Licence URI: http://www.os-templates.com/template-terms
 	<!--티켓 예약 부분-->
 	<div class="ticketing-back ">
 		<div class="ticketing">
-			<form id="searchFlight" action="<? echo TICKET_ROOT.'/ticketbookingForm.php'?>" method="post">
+			<form id="searchFlight" action="<? echo TICKET_ROOT.'/ticketbookingForm.php'?>" method="post" name = "userinput">
 				<ui class="where">
-					<li class="whereStarting">
+
+
+          <li class="whereStarting">
 						<label for="startingCity">출발지</label>
-						<input type="text" name="starting" placeholder="출발지" required="required" />
+						<select required="required" name="starting" >
+              <?
+                $conn = oci_connect("B389064", "B389064","203.249.87.162:1521/orcl");
+
+                $query = "select distinct starting from TICKETING";
+
+                $stmt = oci_parse($conn, $query);
+                oci_execute($stmt);
+                $row_num = oci_fetch_all($stmt, $row);
+
+                if(!$conn){
+                  echo "not connect DB";
+                }
+
+                for($i = 0; $i<$row_num; $i++){
+                  echo "<option value='".$row["STARTING"][$i]."'>".$row["STARTING"][$i]."</option>";
+                }
+              ?>
+            </select>
 					</li>
+
+
+
+
 					<li class="whereDestination">
 						<label for="destinationCity">도착지</label>
-						<input type="text" name="destination" placeholder="도착지" required="required" />
+            <select required="required" name="destination" >
+              <?
+
+
+                $query = "select distinct destination from TICKETING";
+
+                $stmt = oci_parse($conn, $query);
+                oci_execute($stmt);
+                $row_num = oci_fetch_all($stmt, $row);
+
+
+                if(!$conn){
+                  echo "not connect DB";
+                }
+
+                for($i = 0; $i<$row_num; $i++){
+                  echo "<option>".$row["DESTINATION"][$i]."</option>";
+                }
+              ?>
+            </select>
 					</li>
 				</ui>
 				<ui class="when">

@@ -67,7 +67,8 @@ function checkemailaddy(){
         <div>
           <label class="label_stwid65">E-mail</label>
 
-          <input name="email1" type="text" class="box" id="email1"  style="width:84px;"> @ <input name="email2" type="text" class="box" id="email2" style="width:114px;">
+
+        <input name="email1" type="text" class="box" id="email1"  style="width:84px;"> @ <input name="email2" type="text" class="box" id="email2" style="width:114px;">
 
           <select name="email_select" class="box" id="email_select" onChange="checkemailaddy();" style="width:144px;float:right; margin-right:40%;margin-top:10px;">
             <option value="" selected>선택하세요</option>

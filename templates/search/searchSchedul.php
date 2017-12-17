@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
 
-	$query = "select ticketing.*, ticketing_airport.airport_no, ticketing_gate.gate_no from ticketing JOIN ticketing_airport ON ticketing.TICKETING_NO = ticketing_airport.TICKETING_NO JOIN ticketing_gate ON  ticketing.ticketing_no = ticketing_gate.ticketing_no";		
+	$query = "select ticketing.*, ticketing_airport.airport_no, ticketing_gate.gate_no from ticketing JOIN ticketing_airport ON ticketing.TICKETING_NO = ticketing_airport.TICKETING_NO JOIN ticketing_gate ON  ticketing.ticketing_no = ticketing_gate.ticketing_no";		// 질의 수정.
 
 	$stmt = oci_parse($conn, $query);
 	oci_execute($stmt);
@@ -54,7 +54,7 @@ Licence URI: http://www.os-templates.com/template-terms
 	<div class="searchSchedul-back">
 		<div class="searchSchedul">
 			<table border=1 cellspacing=0 cellpadding=5>
-				<tr class="titleLabel">
+				<tr class="title">
 					<td>운항편 번호</td>	<!--1-->
 					<td>출발지</td>		<!--2-->
 					<td>도착지</td>		<!--3-->
@@ -64,35 +64,26 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td>가는 날</td>		<!--7-->
 					<td>오는 날</td>		<!--8-->
 					<td>게이트 번호</td>	<!--9-->
-					<td>예매</td>			<!--10-->
 				</tr>
-				<?
-				if($row_num == 0){
-				?>
-				<tr>
-					<td class ="noSearchSchedul" colspan="10">조회하신 운항편 목록이 없습니다.
-					</td>
-				</tr>
-				<?}else{
-					for ($i=0; $i < $row_num; $i++) { 
-				?>
-				<tr class="titleSchedul">
-					<form action="<?echo TICKET_ROOT.'/bookingPro.php'?>" method="POST" name ="TICKETING_NO">
-						<td><? echo $row["TICKETING_NO"][$i]?></td>						<!--운항편 번호.-->
+
+				<? for ($i=0; $i < $row_num; $i++){
+					//var_dump($row);
+					?>
+				<tr> 
+					<td><? echo $row["TICKETING_NO"][$i]?></td>						<!--운항편 번호.-->
 					<td><? echo $row["STARTING"][$i]?></td>							<!--출발지-->
 					<td><? echo $row["DESTINATION"][$i]?></td>						<!--도착지-->
 					<td><? echo $row["TIME"][$i]?></td>								<!--탑승 시간-->
 					<td><? echo $row["CHANGE_TIME"][$i]?></td>						<!--변경 시간-->
 					<td><a href="" target="_blank" onclick="window.open('<? echo SERVICE_ROOT?>/showAirport.php?AIRPORT_NO=<?=$row['AIRPORT_NO'][$i]?>', '_blank', 'width=550 height=500')">
-						<? echo $row["AIRPORT_NO"][$i]?></a></td>								<!--비행기 번호 클릭시 조회-->
-					<td><? echo $row["DEPARTURE_DATE"][$i]?></td>						<!--가는 날-->
+						<? echo $row["AIRPORT_NO"][$i]?></a></td>					<!--비행기 번호 클릭시 조회-->
+					<td><? echo $row["DEPARTURE_DATE"][$i]?></td>					<!--가는 날-->
 					<td><? echo $row["ARRIVAL_DATE"][$i]?></td>						<!--오는 날-->
 					<td><? echo $row["GATE_NO"][$i]?></td>							<!--게이트 번호 클릭시 위치-->
-					<td ><input type="submit" value="예매"></td>
-					</form>
 				</tr>
-					<? }} ?>
+					<? } ?>
 			</table> 
+
 		</div>
 	</div>
 	

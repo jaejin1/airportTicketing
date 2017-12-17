@@ -1,6 +1,5 @@
 <?php
 session_start();
-include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
 
 if(!isset($_SESSION["ID"])){
@@ -51,13 +50,13 @@ Licence URI: http://www.os-templates.com/template-terms
     <?php
 
 
-   //$conn = oci_connect("B389064", "B389064","203.249.87.162:1521/orcl");
+    $conn = oci_connect("B389064", "B389064","203.249.87.162:1521/orcl");
 
     $id = $_SESSION["ID"];
 
     $query = "select grade , discount from member_grade where member_grade.grade = (select grade from member where id ='".$id."')";
 
-  
+
     $stmt = oci_parse($conn, $query);
     oci_execute($stmt);
     $row_num = oci_fetch_all($stmt, $row);

@@ -7,7 +7,7 @@
   $stmt = oci_parse($conn, $query);
   oci_execute($stmt);
 
-  $row_num = oci_fetch_all($stmt, $row);
+  
  ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,6 @@ Licence URI: http://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href="../layout/styles/ticketing.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
 <!--위의 상단바-->
@@ -47,12 +46,13 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td>게이트 번호</td>	<!--1-->
 					<td>게이트 위치</td>	<!--2-->
 				</tr>
-				<? for ($i=0; $i <$row_num ; $i++) { 
-				?>
-				<tr> 
-					<td class="gateNo"><?=$row['GATE_NO'][$i]?></td>		<!--게이트 번호.-->	
-					<td class="location"><?=$row['LOCATION'][$i]?></td>		<!--게이트 위치-->
-				</tr>
+				<? while (($row_num = oci_fetch_all($stmt,$row)) != false) {
+					# code...
+				}{?>
+			<tr> 
+				<td class="gateNo"><?=$row_num['GATE_NO']?></td>			<!--게이트 번호.-->
+				<td class="location"><?=$row_num['LOCATION']?>"></td>		<!--게이트 위치-->
+			</tr>
 		<? } ?>
 	</table> 
 

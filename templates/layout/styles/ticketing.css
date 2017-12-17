@@ -13,7 +13,7 @@
     height: 300px;
     text-align: center;
 }
-.searchSchedul, .findResult{
+.searchSchedul{
     position: absolute;
     top: 50%;
     left: 20%;
@@ -23,7 +23,7 @@
     text-align: center;
 }
 
-.ticketing-back , .searchTicketing-back, .searchSchedul-back ,.findResult-back{
+.ticketing-back , .searchTicketing-back, .searchSchedul-back{
     width: 100%;
     height: 1000px;
     background-image: url('../../images/demo/backgrounds/bg.jpg');

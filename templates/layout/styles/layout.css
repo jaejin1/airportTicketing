@@ -22,7 +22,7 @@ File: Layout CSS
 
 /*login
 --------------------------------------------------------------------------------------------------------------- */
-.login ,.searchGrade ,.myPageInfo ,.searchGradeAll,.searchGateLoc{
+.login ,.searchGrade ,.myPageInfo ,.searchGradeAll{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,12 +35,12 @@ File: Layout CSS
     color: #000000;
     width: 350px;
 }
-.myPageInfo {
+.myPageInfo ,.findResult{
     width: 1400px;
     height: 1000px;
     width: 100%;
 }
-.login-back, .searchGrade-back , .myPageInfo-back ,.searchGradeALL-back , .searchGateLoc-back{
+.login-back, .searchGrade-back , .myPageInfo-back ,.searchGradeALL-back ,.findResult-back{
     width: 100%;
     height: 1000px;
     background-image: url('../../images/demo/backgrounds/bg.jpg');
@@ -71,6 +71,30 @@ input {
 input::placeholder{
 	color: white;
 }
+
+select {
+  display: inline-block;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+  height: 37.53px;
+}
+
 .fa-user, .fa-lock{
 	color: rgba(25,25,25,0.7);
 }
@@ -128,6 +152,20 @@ input::placeholder{
     font-size: 12px;
     border-color: rgba(0,0,0,0);
 }
+
+.insertMember-address{
+    display: inline-block;
+    width: 75%;
+    font-size: 12px;
+    border-color: rgba(0,0,0,0);
+}
+
+.insertMember-address input{
+    display: inline-block;
+    width: 75%;
+    font-size: 12px;
+    border-color: rgba(0,0,0,0);
+}
 /* Find ID
 --------------------------------------------------------------------------------------------------------------- */
 .findId_info{
@@ -148,7 +186,7 @@ input::placeholder{
     line-height: 38px;
 }
 .btn_idsh {
-    
+
     width:395px;
     height:45px;
     margin-top:5px;
@@ -258,9 +296,7 @@ input::placeholder{
 
 /* ticketing form
 --------------------------------------------------------------------------------------------------------------- */
-.noSearchNum{
-    text-align: center;
-}
+
 
 
 /* Footer
@@ -322,8 +358,9 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 
 #mainav form{display:none; margin:0; padding:0;}
 #mainav form select, #mainav form select option{display:block; cursor:pointer; outline:none;}
-#mainav form select{width:100%; padding:5px; border:1px solid;}
+#mainav form select{width:100%; padding:10px; border:1px solid;}
 #mainav form select option{margin:5px; padding:0; border:none;}
+
 
 /* Breadcrumb */
 #breadcrumb{padding:15px 0;}

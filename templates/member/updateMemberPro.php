@@ -8,13 +8,16 @@
 	#$reg_date = getdate();
 	$passwd = $_POST['pw'];
 
-	$email = $_POST['email'];
+	$email = $_POST['email1'].'@'.$_POST['email_select'];
+
+  $birthday = $_POST['birth'];
+
+  $address = $_POST['address'];
 
 
 
 	#$query = "insert into member values ('$id', sysdate, '$passwd', '$name', '$birthday','$sex', '$email','normal')";
-  $query = "update member set passwd='".$passwd."', email='".$email."' where id='".$id."'";
-
+  $query = "update member set passwd='".$passwd."', email='".$email."' , birthday='".$birthday."' , address='".$address."' where id='".$id."'";
   #$query = "select * from member where id='".$idch."'";
 
 

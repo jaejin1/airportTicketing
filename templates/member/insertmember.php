@@ -19,6 +19,22 @@ Licence URI: http://www.os-templates.com/template-terms
   <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
   <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script><!-- 최신버전 제이쿼리 -->
 
+<script type="text/javascript">
+<!--
+function checkemailaddy(){
+        if (userinput.email_select.value == '1') {
+            userinput.email2.readOnly = false;
+            userinput.email2.value = '';
+            userinput.email2.focus();
+        }
+        else {
+            userinput.email2.readOnly = true;
+            userinput.email2.value = userinput.email_select.value;
+        }
+    }
+//-->
+
+</script>
   <script>
     $(document).ready(function(){
 
@@ -37,18 +53,9 @@ Licence URI: http://www.os-templates.com/template-terms
 
     });
 
-    function checkemailaddy(){
-      if (form.email_select.value == '1') {
-        form.email2.readOnly = false;
-        form.email2.value = '';
-        form.email2.focus();
-      }
-      else {
-        form.email2.readOnly = true;
-        form.email2.value = form.email_select.value;
-      }
-    }
   </script>
+
+
   <script>
     function check_pw(val){
 
@@ -169,27 +176,36 @@ Licence URI: http://www.os-templates.com/template-terms
           <tr class="insertMember-table">
             <td class="insertMember-label">이메일</td>
             <td class="insertMember-value">
-              <input type="text" name="email" maxlength="14"/>
-              <label>@</label>
-              <select name="email_select" class="box" id="email2" onChange="checkemailaddy();" style="width:144px;float:right; margin-right:40%;margin-top:10px;">
-                <option value="" selected>선택하세요</option>
-                <option value="empal.com">empal.com</option>
-                <option value="dreamwiz.com">dreamwiz.com</option>
-                <option value="naver.com">naver.com</option>
-                <option value="hotmail.com">hotmail.com</option>
-                <option value="chollian.net">chollian.net</option>
-                <option value="freechal.com">freechal.com</option>
-                <option value="hanafos.com">hanafos.com</option>
-                <option value="kebi.com">kebi.com</option>
-                <option value="korea.com">korea.com</option>
-                <option value="lycos.co.kr">lycos.co.kr</option>
-                <option value="netian.com">netian.com</option>
-                <option value="netsgo.com">netsgo.com</option>
-                <option value="unitel.co.kr">unitel.co.kr</option>
-                <option value="yahoo.co.kr">yahoo.co.kr</option>
-                <option value="1">직접입력</option>
-              </select>
+
+              <div>
+
+                <input name="email1" type="text" class="box" id="email1"  style="width:84px;"> @ <input name="email2" type="text" class="box" id="email2" style="width:114px;">
+
+                <select name="email_select" class="box" id="email_select" onChange="checkemailaddy();" style="width:144px;float:right; margin-right:40%; margin-top:10px;">
+                  <option value="" selected>선택하세요</option>
+                  <option value="empal.com">empal.com</option>
+                  <option value="dreamwiz.com">dreamwiz.com</option>
+                  <option value="naver.com">naver.com</option>
+                  <option value="hotmail.com">hotmail.com</option>
+                  <option value="chollian.net">chollian.net</option>
+                  <option value="freechal.com">freechal.com</option>
+                  <option value="hanafos.com">hanafos.com</option>
+                  <option value="kebi.com">kebi.com</option>
+                  <option value="korea.com">korea.com</option>
+                  <option value="lycos.co.kr">lycos.co.kr</option>
+                  <option value="netian.com">netian.com</option>
+                  <option value="netsgo.com">netsgo.com</option>
+                  <option value="unitel.co.kr">unitel.co.kr</option>
+                  <option value="yahoo.co.kr">yahoo.co.kr</option>
+                  <option value="1">직접입력</option>
+                </select>
+              </div>
+
             </td>
+          </tr>
+          <tr class="insertMember-table">
+            <td class="insertMember-label">주소</td>
+            <td class="insertMember-address"><input type="text" name="address" id="address" maxlength="30"/></td>
           </tr>
         </table>
         <input type="submit" name="insertmember" value="회원가입" onclick="return blank_up()"/>
