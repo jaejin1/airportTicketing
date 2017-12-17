@@ -7,7 +7,7 @@
   $stmt = oci_parse($conn, $query);
   oci_execute($stmt);
 
-  
+  $row_num = oci_fetch_all($stmt, $row);
  ?>
 
 <!DOCTYPE html>
@@ -46,13 +46,12 @@ Licence URI: http://www.os-templates.com/template-terms
 					<td>게이트 번호</td>	<!--1-->
 					<td>게이트 위치</td>	<!--2-->
 				</tr>
-				<? while (($row_num = oci_fetch_all($stmt,$row)) != false) {
-					# code...
-				}{?>
-			<tr> 
-				<td class="gateNo"><?=$row_num['GATE_NO']?></td>			<!--게이트 번호.-->
-				<td class="location"><?=$row_num['LOCATION']?>"></td>		<!--게이트 위치-->
-			</tr>
+				<? for ($i=0; $i <$row_num ; $i++) { 
+				?>
+				<tr> 
+					<td class="gateNo"><?=$row['GATE_NO'][$i]?></td>		<!--게이트 번호.-->	
+					<td class="location"><?=$row['LOCATION'][$i]?></td>		<!--게이트 위치-->
+				</tr>
 		<? } ?>
 	</table> 
 
