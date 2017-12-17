@@ -5,6 +5,7 @@
 
 	//로그인 되어있으면 //예매 확인. 없으면 예매 조회로.
 	if(isset($_SESSION["ID"])){
+		$sql = "select  ";
     //디비에서 받아오기.
   }
 ?>
@@ -42,7 +43,44 @@ Licence URI: http://www.os-templates.com/template-terms
 	<!--검색한 부분 여기서는 운항편 정보를 알려준다.-->
 	<div class="findResult-back">
 		<div class="findResult">
-			
+			<table>
+				<tr>
+					<td>운항편 번호</td>
+					<td>예매 번호</td>
+					<td>출발지</td>
+					<td>목적지</td>
+					<td>예상 이동 시간</td>
+					<td>변경 시간</td>
+					<td>항공사 이름</td>
+					<td>가는날</td>
+					<td>오는날</td>
+					<td>비행기 번호</td>
+					<td>게이트 번호</td>
+					<td>좌석</td>
+				</tr>
+				<?
+					for ($i=0; $i < $row_num = oci_fetch_all($stmt, $row); $i++) { 
+				?>
+				<tr>
+					<td><?echo $row["TICKETING_NO"][i]?></td>
+					<?php
+						$sql = "select * from ";
+						$airport_num;
+					?>
+					<td><?echo $row[""][i]?></td>
+					<td><?echo $row["STARTING"][i]?></td>
+					<td><?echo $row["DESTINATION"][i]?></td>
+					<td><?echo $row["TIME"][i]?></td>
+					<td><?echo $row["CHANGE_TIME"][i]?></td>
+					<td><?echo $row[""][i]?></td>
+					<td><?echo $row[""][i]?></td>
+					<td><?echo $row["DEPARTURE_DATE"][i]?></td>
+					<td><?echo $row["ARRIVAL_DATE"][i]?></td>
+					<td><?echo $row[""][i]?></td>
+					<td><?echo $row[""][i]?></td>
+				</tr>
+				<?}?>
+			</table>
 		</div>
 	</div>
 	<!--footer 부분-->

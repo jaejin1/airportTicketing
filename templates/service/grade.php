@@ -59,7 +59,6 @@ Licence URI: http://www.os-templates.com/template-terms
 
     $stmt = oci_parse($conn, $query);
     oci_execute($stmt);
-
     $row_num = oci_fetch_all($stmt, $row);
 
     if(!$conn){

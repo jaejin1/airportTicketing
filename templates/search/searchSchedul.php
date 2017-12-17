@@ -2,16 +2,23 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/db_connect.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/a_team/a_team5/earthport/config/config.php';
 
-	$query = "select * from ticketing";		// 질의 수정.
+	$query = "select ticketing.*, ticketing_airport.airport_no, ticketing_gate.gate_no from ticketing JOIN ticketing_airport ON ticketing.TICKETING_NO = ticketing_airport.TICKETING_NO JOIN ticketing_gate ON  ticketing.ticketing_no = ticketing_gate.ticketing_no";		// 질의 수정.
+
 	$stmt = oci_parse($conn, $query);
 	oci_execute($stmt);
 
-	//$row_num = oci_fetch_all($stmt, $row);
+	$row_num = oci_fetch_all($stmt, $row);
+	//echo "개수".$row_num."<br>";
+	//var_dump($row)."<br>";
+	//echo $query."<br>";
+	if(!$conn){
+		echo "not connect DB";
+	}
+	oci_close($conn);
+	?>
 
-?>
 
-
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <!--
 Template Name: EARPORT
 Author: <a href="http://www.os-templates.com/">OS Templates</a>
@@ -30,13 +37,13 @@ Licence URI: http://www.os-templates.com/template-terms
 <body id="top">
 	<!--위의 상단바-->
 	<?php
-	include GROUND_ROOT . "/sideBar.php";
+	include GROUND_DIR . "/sideBar.php";
 	?>
 
 	<!-- Top Background Image Wrapper -->
 	<div class="bgded overlay" style="background-image:url('../images/demo/backgrounds/bg.jpg');">
 		<?php
-		include GROUND_ROOT . "/header.php";
+		include GROUND_DIR . "/header.php";
 		?>
 	</div>
 	<!-- End Top Background Image Wrapper -->
@@ -49,44 +56,45 @@ Licence URI: http://www.os-templates.com/template-terms
 			<table border=1 cellspacing=0 cellpadding=5>
 				<tr class="title">
 					<td>운항편 번호</td>	<!--1-->
-					<td>예매 번호</td>		<!--2-->
-					<td>출발지</td>		<!--3-->
-					<td>도착지</td>		<!--4-->
-					<td>탑승 시간</td>		<!--5-->
+					<td>출발지</td>		<!--2-->
+					<td>도착지</td>		<!--3-->
+					<td>탑승 시간</td>		<!--4-->
+					<td>변경 시간</td>		<!--5-->
 					<td>비행기 번호</td>	<!--6-->
 					<td>가는 날</td>		<!--7-->
 					<td>오는 날</td>		<!--8-->
 					<td>게이트 번호</td>	<!--9-->
-					<td>좌석 번호</td>		<!--10-->
 				</tr>
-			
-				<? while($row_num= oci_fetch_array($stmt, $OCI_BOTH)){?>
-			<tr> 
-				<td class="num"><?=$row_num["TICKETING_NO"]?></td>			<!--운항편 번호.-->
-																			<!--예매 번호. 가격 확인 alert -->
-					<td><?=$row_num["STARTING"]?></td>							<!--출발지-->
-					<td><?=$row_num["DESTINATION"]?></td>						<!--도착지-->
-					<td><?=$row_num["TIME"]?></td>								<!--탑승 시간-->
-					<!--<td><?=$row_num[""]?></td>	-->								<!--비행기 번호 클릭시 조회 가능. sql in 해야함-->
-					<td><?=$row_num["DEPARTURE_DATE"]?></td>					<!--가는 날-->
-					<td><?=$row_num["ARRIVAL_DATE"]?></td>						<!--오는 날-->
-					<!--<td><?=$row_num[""]?></td>			-->								<!--게이트 번호 sql in 해야함-->
-				<!--	<td><?=$row_num[""]?></td>			-->								<!--좌석 번호 sql in 해야함-->
-				</tr>
-			<? } ?>
-		</table> 
 
+				<? for ($i=0; $i < $row_num; $i++){
+					//var_dump($row);
+					?>
+				<tr> 
+					<td><? echo $row["TICKETING_NO"][$i]?></td>						<!--운항편 번호.-->
+					<td><? echo $row["STARTING"][$i]?></td>							<!--출발지-->
+					<td><? echo $row["DESTINATION"][$i]?></td>						<!--도착지-->
+					<td><? echo $row["TIME"][$i]?></td>								<!--탑승 시간-->
+					<td><? echo $row["CHANGE_TIME"][$i]?></td>						<!--변경 시간-->
+					<td><a href="" target="_blank" onclick="window.open('<? echo SERVICE_ROOT?>/showAirport.php?AIRPORT_NO=<?=$row['AIRPORT_NO'][$i]?>', '_blank', 'width=550 height=500')">
+						<? echo $row["AIRPORT_NO"][$i]?></a></td>					<!--비행기 번호 클릭시 조회-->
+					<td><? echo $row["DEPARTURE_DATE"][$i]?></td>					<!--가는 날-->
+					<td><? echo $row["ARRIVAL_DATE"][$i]?></td>						<!--오는 날-->
+					<td><? echo $row["GATE_NO"][$i]?></td>							<!--게이트 번호 클릭시 위치-->
+				</tr>
+					<? } ?>
+			</table> 
+
+		</div>
 	</div>
-</div>
-
-<!--footer 부분-->
-<?php
-include GROUND_ROOT . "/footer.php";
-?>
-<!-- JAVASCRIPTS -->
-<?php
-include GROUND_ROOT . "/javascriptpart.php";
-?>
+	
+	<!--footer 부분-->
+	<?php
+	include GROUND_DIR . "/footer.php";
+	?>
+	<!-- JAVASCRIPTS -->
+	<?php
+	include GROUND_DIR . "/javascriptpart.php";
+	?>
 
 </body>
 </html>
